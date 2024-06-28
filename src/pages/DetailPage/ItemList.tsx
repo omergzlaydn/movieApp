@@ -1,26 +1,39 @@
-type CompanyType = {
+import React from "react";
+
+interface ProductionCompany {
   id: number;
   logo_path: string | null;
   name: string;
   origin_country: string;
-};
+}
 
-type LanguageType = { english_name: string; iso_639_1: string; name: string };
+interface Language {
+  english_name: string;
+  iso_639_1: string;
+  name: string;
+}
 
-type CountryType = { iso_3166_1: string; name: string };
+interface Country {
+  iso_3166_1: string;
+  name: string;
+}
 
-type PropsType = {
-  data: CompanyType[] | CountryType[] | LanguageType[];
-};
+interface ItemListProps {
+  title: string;
+  data: ProductionCompany[] | Language[] | Country[];
+}
 
-const ItemList = ({ data }: PropsType) => {
+const ItemList: React.FC<ItemListProps> = ({ title, data }) => {
   return (
-    <div className="my-5">
-      <div className="flex gap-5">
-        {data.map((item) => (
-          <p className="text-gray-500">{item.name}</p>
+    <div className="p-4 bg-gray-800 rounded-lg shadow-md">
+      <h3 className="font-bold mb-2 text-white">{title}</h3>
+      <ul>
+        {data.map((item, index) => (
+          <li key={index} className="mb-1 text-gray-300">
+            {"name" in item ? item.name : ""}
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

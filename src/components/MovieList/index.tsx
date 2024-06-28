@@ -65,7 +65,7 @@ const MovieList = ({ endpoint, title }: PropsType) => {
           <div className="flex items-center relative">
             <button
               onClick={scrollLeft}
-              className={`absolute left-0 z-10 p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300 transition-colors ${!isScrolled ? 'opacity-0' : 'opacity-100'}`}
+              className={`absolute left-0 z-10 p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300 transition-opacity ${!isScrolled ? 'opacity-0' : 'opacity-100'}`}
               style={{ transition: 'opacity 0.3s' }}
             >
               <FaChevronLeft size={24} />
@@ -82,7 +82,7 @@ const MovieList = ({ endpoint, title }: PropsType) => {
             </div>
             <button
               onClick={scrollRight}
-              className={`absolute right-0 z-10 p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300 transition-colors ${isEnd ? 'opacity-0' : 'opacity-100'}`}
+              className={`absolute right-0 z-10 p-2 bg-gray-200 rounded-full shadow-md hover:bg-gray-300 transition-opacity ${isEnd ? 'opacity-0' : 'opacity-100'}`}
               style={{ transition: 'opacity 0.3s' }}
             >
               <FaChevronRight size={24} />

@@ -1,3 +1,4 @@
+import React from "react";
 import MovieList from "../../components/MovieList";
 
 interface MovieListContainerProps {
@@ -7,20 +8,20 @@ interface MovieListContainerProps {
 
 const MovieListContainer: React.FC<MovieListContainerProps> = ({ title, endpoint }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-4">
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
-      <MovieList endpoint={endpoint} title={""} />
+    <div className="bg-gradient-to-r from-red-600 via-burgundy-700 to-black rounded-lg p-4">
+      <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
+      <div className="overflow-x-scroll scrollbar-hide">
+        <MovieList endpoint={endpoint} title={""} />
+      </div>
     </div>
   );
 };
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col gap-8 bg-gray-100 text-gray-800 p-6">
-      <MovieListContainer title="Populars" endpoint="/movie/popular" />
-
+    <div className="flex flex-col gap-8 bg-gray-900 text-white p-6">
+      <MovieListContainer title="Popular" endpoint="/movie/popular" />
       <MovieListContainer title="Top Rated" endpoint="/movie/top_rated" />
-
       <MovieListContainer title="Trending" endpoint="/trending/movie/day" />
     </div>
   );

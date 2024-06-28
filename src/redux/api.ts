@@ -5,13 +5,13 @@ export const api = createApi({
   reducerPath: "api",
 
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://api.themoviedb.org/3",
-    headers: {
-      accept: "application/json",
-      "content-type": "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMGJmMWYxOGI3NTcxYTVlZmQ4NmJmMmM5ZWRlMmI3ZSIsInN1YiI6IjY1NGE3YTczNDFhNTYxMzM2OTNiZmZiZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ok0AYyE3-DWPld_WMf1sXpU3fCyRM_EZZwk8Xbddi8U",
-    },
+    baseUrl: import.meta.env.VITE_API_BASE_URL,
+    prepareHeaders: (headers) => {
+      headers.set('accept', 'application/json');
+      headers.set('content-type', 'application/json');
+      headers.set('Authorization', `Bearer ${import.meta.env.VITE_API_AUTH}`);
+      return headers;
+    }
   }),
 
   tagTypes: ["Movies", "Favorites"],
