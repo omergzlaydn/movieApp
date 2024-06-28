@@ -17,12 +17,14 @@ Bu proje, React ve Redux Toolkit kullanarak film bilgilerini çekmek ve gösterm
 
 3. .env dosyasını oluşturun ve gerekli çevre değişkenlerini ekleyin:
 
-   VITE_API_BASE_URL=https://api.themoviedb.org/3
-   VITE_API_KEY= sizin_api_keyiniz
-   VITE_API_AUTH= api_tokeniniz
+-    VITE_API_BASE_URL=https://api.themoviedb.org/3          
+
+-    VITE_API_KEY= sizin_api_keyiniz          
+
+-    VITE_API_AUTH= api_tokeniniz
 
 
-4. Projeyi başlatın:
+5. Projeyi başlatın:
    
    npm run dev
 
